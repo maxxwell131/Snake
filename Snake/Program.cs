@@ -34,6 +34,9 @@ namespace Snake
             Update(p1);
             Console.WriteLine("Call Update p1.x = " + p1.x + ", p1.y = " + p1.y);
 
+            UpdateWithNewObject(ref p1);
+            Console.WriteLine("Call UpdateWithNewObject p1.x = " + p1.x + ", p1.y = " + p1.y);
+
             Console.ReadLine();
         }
 
@@ -59,6 +62,11 @@ namespace Snake
         }
 
         public static void Update(Point p)
+        {
+            p = new Point();
+        }
+
+        public static void UpdateWithNewObject(ref Point p)
         {
             p = new Point();
         }
