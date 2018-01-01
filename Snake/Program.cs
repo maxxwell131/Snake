@@ -9,7 +9,7 @@ namespace Snake
     {
         public static void Main(string[] args)
         {
-            HorizontalLine hLine = new HorizontalLine();
+            HorizontalLine hLine = new HorizontalLine( 10, 20, 5,'*');
             hLine.Drow();
 
             Console.ReadLine();
