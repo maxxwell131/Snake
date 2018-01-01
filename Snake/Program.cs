@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 //https://github.com/Kartavec/snake/blob/lesson-5/RAM/Snake/Snake/Program.cs
 
@@ -8,67 +9,37 @@ namespace Snake
     {
         public static void Main(string[] args)
         {
-            int x = 1;
-            Func1(x);
-            Console.WriteLine("Call Func1. x = " + x);
-
-            x = 1;
-            Func2(x);
-            Console.WriteLine("Call Func2. x = " + x);
-
-            x = 1;
-            Func3(x);
-            Console.WriteLine("Call Func3. x = " + x);
-
             Point p1 = new Point(1, 3, '*');
-            Move(p1, 10, 10);
-            Console.WriteLine("Call Move. p1.x = " + p1.x + ", p1.y = " + p1.y);
-
             Point p2 = new Point(4, 5, '#');
-            p1 = p2;
-            p2.x = 8;
-            p2.y = 8;
-            Console.WriteLine("p1 = p2. p1.x = " + p1.x + ", p1.y = " + p1.y + "; p2.x = " + p2.x + ", p2.y = " + p2.y);
+            Point p3 = new Point(21, 23, '@');
+            Point p4 = new Point(33, 44, '%');
 
-            p1 = new Point(1, 3, '*');
-            Update(p1);
-            Console.WriteLine("Call Update p1.x = " + p1.x + ", p1.y = " + p1.y);
 
-            UpdateWithNewObject(ref p1);
-            Console.WriteLine("Call UpdateWithNewObject p1.x = " + p1.x + ", p1.y = " + p1.y);
+            List<Point> pointList = new List<Point>();
+            pointList.Add(p1);
+            pointList.Add(p2);
+            pointList.Add(p3);
+            pointList.Add(p4);
+            pointList.Add(p1);
+
+            foreach(Point obj in pointList)
+            {
+                obj.pointPrint();
+            }
+
+            pointList.RemoveAt(pointList.Count - 1);
+
+            Console.WriteLine(new string('*', 30));
+
+            foreach (Point obj in pointList)
+            {
+                obj.pointPrint();
+            }
+
 
             Console.ReadLine();
         }
 
-        public static void Func1(int value)
-        {
 
-        }
-
-        public static void Func2(int value)
-        {
-            value = value + 1;
-        }
-
-        public static void Func3(int x)
-        {
-            x = x + 1;
-        }
-
-        public static void Move(Point p, int dx, int dy)
-        {
-            p.x = p.x + dx;
-            p.y = p.y + dy;
-        }
-
-        public static void Update(Point p)
-        {
-            p = new Point();
-        }
-
-        public static void UpdateWithNewObject(ref Point p)
-        {
-            p = new Point();
-        }
     }
 }

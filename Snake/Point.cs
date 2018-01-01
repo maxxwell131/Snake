@@ -3,7 +3,7 @@ namespace Snake
 {
     public class Point
     {
-            public int x;
+        public int x;
         public int y;
         public char symb;
 
@@ -23,6 +23,11 @@ namespace Snake
         {
             Console.SetCursorPosition(x, y);
             Console.Write(symb);
+        }
+
+        public void pointPrint()
+        {
+            Console.WriteLine("x = {0} y = {1} symbol = {2}", this.x, this.y, this.symb);
         }
         
     }
