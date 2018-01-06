@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 //https://github.com/Kartavec/snake/blob/lesson-5/RAM/Snake/Snake/Program.cs
 
@@ -22,8 +23,25 @@ namespace Snake
             rightLine.Drow();
 
             Point p = new Point( 4, 5, '*');
-            Snake snake = new Snake( p, 4, Direction.DOWN);
+            Snake snake = new Snake( p, 4, Direction.RIGHT);
             snake.Drow();
+            snake.Move();
+
+            System.Threading.Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
 
             Console.ReadLine();
         }

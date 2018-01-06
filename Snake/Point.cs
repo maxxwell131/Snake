@@ -36,6 +36,12 @@ namespace Snake
             }
         }
 
+        internal void Clear()
+        {
+            symb = ' ';
+            Draw();
+        }
+
         public Point(int x, int y, char symb)
         {
             this.x = x;
