@@ -65,5 +65,10 @@ namespace Snake
             return x + ", " + y + " ," + symb; 
                 //base.ToString();
         }
+
+        public bool IsHit(Point point)
+        {
+            return this.x == point.x && this.y == point.y;
+        }
     }
 }
